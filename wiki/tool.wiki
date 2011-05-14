@@ -1,0 +1,88 @@
+#labels tool
+#PDFをテキスト化するツール,サービスの一覧
+
+= はじめに =
+ PDFをテキスト化するツールおよびサービスについて、まとめます。
+
+= セキュリティのかかったPDFについて =
+ PDFには、以下の2種類のパスワードでセキュリティをかけることができます。
+  * ページの抽出などの操作制限を行う"owner password"
+  * ファイルをオープンする制限を行う"user password"
+
+ そして、[http://www.mext.go.jp/a_menu/saigaijohou/syousai/1304001.htm 文部省提供の『原発周辺の固定測定点における空間線量率の測定結果』] は、言語道断なことに、"owner password"により抽出が禁止されたPDFなのです。
+
+ 「アクセシビリティのための抽出」は許可されてはいますが、Adobe Acrobatで「テキスト（アクセシブル）」形式で抽出しても、肝心の表データがごっそりと抜け落ちます。
+
+ "owner password"で抽出が禁止されたPDFでも、ツールによっては、表データもテキスト抽出できます。
+
+ ただし、ベタなテキストとして抽出できるだけであり、目次や表構造などの構造的な情報について抜き出すツールは、現状のところ見つかっていません。
+
+ 基本的に、PDFに記録されている構造的な情報を利用するためには、データの提供元にセキュリティを外してもらう必要があります。
+
+= PDFを抽出できるツール、サービスの一覧 =
+ ※抽出禁止PDFとは、「アクセシビリティのための抽出」は許可されているが、「ページの抽出」が禁止されているものとします。
+
+ * Acrobat Reader
+  * 概要 : Adobeが無償配布しているPDFのビューワー
+  * 環境 : Windows
+  * ライセンス : -
+  * テキスト以外の抽出形式 : なし
+  * 抽出禁止PDFの抽出 : ×
+
+ * Acrobat Acrobat
+  * 概要 : Adobeの商用ソフト
+  * 環境 : Windows
+  * ライセンス : -
+  * テキスト以外の抽出形式 : XML 1.0, HTML 3.2, HTML 4.01, Postscript, WORD など
+  * 抽出禁止PDFの抽出 : ×
+
+ * Foxit J-Reader [http://www.foxitsoftware.com/]
+  * 概要 : 無料ソフト
+  * 環境 : Windows
+  * ライセンス : -
+  * テキスト以外の抽出形式 : XML 1.0, HTML 3.2, HTML 4.01, Postscript, WORD など
+  * 抽出禁止PDFの抽出 : ベタテキストとして抽出可能
+
+ * xdoc2txt [http://www31.ocn.ne.jp/~h_ishida/xdoc2txt.html]
+  * 概要 : 無料ソフト
+  * 環境 : Windows
+  * ライセンス : 非営利の場合、フリーで使用
+  * テキスト以外の抽出形式 : なし
+  * 抽出禁止PDFの抽出 : ベタテキストとして抽出可能
+
+ * PDFlib TET [http://www31.ocn.ne.jp/~h_ishida/xdoc2txt.html]
+  * 概要 : PDFからテキスト、画像、メタデータを抽出するツール
+  * 環境 : Windows/Mac/Linuxなど
+  * ライセンス : 商用
+  * テキスト以外の抽出形式 : XML
+  * 抽出禁止PDFの抽出 : ？
+
+ * Google Wireless Transcoder (GWT) [http://www.google.co.jp/gwt/n]
+  * 概要 : 指定したURLのサイトデータを、携帯電話で見れるように変換するGoogleのサービス。PDFの内容もHTMLに変換される。
+  * 環境 : Webサービス
+  * ライセンス : -
+  * テキスト以外の抽出形式 : HTML(非構造)
+  * 抽出禁止PDFの抽出 : ベタテキストとして抽出可能
+  * 備考 : 表の順序がおかしくなる、抽出できないものもある
+
+ * PDF to Excel [http://www.pdftoexcelonline.com/]
+  * 概要 : 指定したPDFの内容を、Execelファイルに変換する。変換結果はメールで送られてくる
+  * 環境 : Webサービス
+  * ライセンス : -
+  * テキスト以外の抽出形式 : Excel
+  * 抽出禁止PDFの抽出 : 〇
+
+ * Poppler [http://poppler.freedesktop.org/]
+  * 概要 : PDFレンダリングライブラリ
+  * 環境 : Linux
+  * ライセンス : ?
+  * テキスト以外の抽出形式 : HTML?
+  * 抽出禁止PDFの抽出 : ?
+  * 備考 : 表の順序がおかしくなる
+
+ * PDFBox [http://pdfbox.apache.org/]
+  * 概要 : PDFの作成や操作を行えるOSSのJavaライブラリ
+  * 環境 : JVM
+  * ライセンス : Apache License, Version 2.0
+  * テキスト以外の抽出形式 : HTML(非構造)
+  * 抽出禁止PDFの抽出 : ベタテキストとして抽出可能
