@@ -43,7 +43,8 @@ java -jar pdfconv-1.0-SNAPSHOT.jar <command> [-url <targeturl>]
  [-url <targeturl>] 省略可
   targeturl : 抽出対象のURLを指定します
               省略されている場合は、福島原発の測定結果*1 にある最新日時のPDFを抽出対象とします
-              また、<command>で"JSON"を選択している場合は指定を無視して、前述のPDFを抽出対象とします
+              また、<command>で"JSON"を選択している場合、福島原発の測定結果*1 内のURLでないと
+              正常に出力されません。
 
  実行例
   java -jar pdfconv-1.0-SNAPSHOT.jar HTML -url http://www.tepco.co.jp/nu/pamp/images/senryo1.pdf

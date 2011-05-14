@@ -28,7 +28,7 @@ public class PDFConv {
 					output.output(url);
 				
 				} else if (command.equals("JSON")) {
-					url = UrlOption.getUrl(null);
+					url = UrlOption.getUrl(arguments);
 					JsonOutput output = new JsonOutput();
 					output.output(url);
 
