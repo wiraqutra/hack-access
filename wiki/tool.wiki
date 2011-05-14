@@ -3,6 +3,7 @@
 
 = はじめに =
  PDFをテキスト化するツールおよびサービスについて、まとめます。
+ 各ツールやサービスは、それぞれのサイトや同梱物の説明書きをよくお読みの上で、お使いください。
 
 = セキュリティのかかったPDFについて =
  PDFには、以下の2種類のパスワードでセキュリティをかけることができます。
@@ -86,3 +87,20 @@
   * ライセンス : Apache License, Version 2.0
   * テキスト以外の抽出形式 : HTML(非構造)
   * 抽出禁止PDFの抽出 : ベタテキストとして抽出可能
+
+= PDFのセキュリティを外す方法について =
+
+ * PDFUnlock! - Unlock secured PDF files online for free. [ http://www.pdfunlock.com/ ]
+  * 概要 : Webサービスを使用してセキュリティを外す
+  * 環境 : Webサービス
+  * 結果 : 成功
+
+ * Ghostscript/GSview [http://auemath.aichi-edu.ac.jp/~khotta/ghost/]
+  * 概要 : GSViewでPDFを開き、File→Convertでpdfwriteを選択して出力する
+  * 環境 : Windows
+  * 結果 : PDFとしては見掛け上は、ほぼ変わらない。しかし、構造的な情報が抜け落ちてしまう。
+  * 備考 : プリンタドライバとして登録されるPDF作成ソフトも同様の結果になると思われます。
+
+  ※ 辞書ファイルや総当たりでパスワードを解析するツールである PDFCrack、PDF Password Recovery Tools は試していません。
+
+  ※ Freeware PDF Unlocker  [http://wxy117.seesaa.net/article/182841379.html 使用方法の参考] は、64bit版がなくて試せていません。
