@@ -1,0 +1,170 @@
+=======================================================================
+Apache PDFBoxライブラリを使用したPDFからのデータ抽出サンプルプログラム
+
+ hack-access
+  - 読めない文書をハック
+  - Hack For Japanプロジェクト
+  - Google Project Hosting <http://code.google.com/p/hack-access/>
+=======================================================================
+
+概要
+==============================
+このプログラムは、Apache PDFBoxライブラリを使用して、PDFからデータを抽出する
+Javaのサンプルプログラムです。
+
+プログラムの骨格部分は、Radiation Data in Japan
+ <http://radiation.s3-website-us-east-1.amazonaws.com/>
+を作成された ymdmstk さんから提供されたソースを元にしています。
+
+ライセンス
+==============================
+New BSD License
+
+ビルド手順
+==============================
+1. Java および Maven2 を、マシンに導入する
+2. pom.xml が存在するディレクトリで、コマンドライン"mvn package" と入力して実行する
+3. targetフォルダに、pdfconv-1.0-SNAPSHOT.jar が作成されていることを確認する
+4. target/libフォルダに、後述する依存ライブラリが転送されていることを確認する
+
+実行方法
+==============================
+pdfconv-1.0-SNAPSHOT.jar と 依存ライブラリの入ったlibフォルダ が、実行に必要となります。
+
+コマンドラインから、以下の書式で実行すると、標準出力に指定したPDFのデータが抽出されます。
+java -jar pdfconv-1.0-SNAPSHOT.jar <command> [-url <targeturl>]
+
+ <command> 省略不可
+  TEXT : データをプレーンテキストで出力します
+  HTML : データをHTML形式で出力します
+  JSON : データを特別な形式で出力します
+         対応しているのは 福島原発の測定結果*1 のみです
+
+ [-url <targeturl>] 省略可
+  targeturl : 抽出対象のURLを指定します
+              省略されている場合は、福島原発の測定結果*1 にある最新日時のPDFを抽出対象とします
+              また、<command>で"JSON"を選択している場合は指定を無視して、前述のPDFを抽出対象とします
+
+ 実行例
+  java -jar pdfconv-1.0-SNAPSHOT.jar HTML -url http://www.tepco.co.jp/nu/pamp/images/senryo1.pdf
+
+  java -jar pdfconv-1.0-SNAPSHOT.jar JSON
+
+
+  *1 文部科学省『福島第1及び第2原子力発電所周辺のモニタリングカーを用いた固定測定点における空間線量率の測定結果』
+     <http://www.mext.go.jp/a_menu/saigaijohou/syousai/1304001.htm>
+
+
+依存ライブラリ
+==============================
+・PDFBox
+  PDFからのデータ抽出に使用
+  pdfbox-1.5.0.jar
+  fontbox-1.5.0.jar
+  jempbox-1.5.0.jar
+
+    Apache PDFBox - Apache PDFBox - Java PDF Library <http://pdfbox.apache.org/>
+    ライセンス : Apache License, Version 2.0
+
+・PDFBoxの依存ライブラリ
+  
+  commons-logging-1.1.1.jar
+    Commons Logging - Overview <http://commons.apache.org/logging/>
+    ライセンス : Apache License, Version 2.0
+
+  bcprov-jdk16-1.46.jar
+    bouncycastle.org <http://www.bouncycastle.org/>
+    ライセンス
+    /*-- 
+    Copyright (c) 2000 - 2011 The Legion Of The Bouncy Castle (http://www.bouncycastle.org)
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of this 
+    software and associated documentation files (the "Software"), to deal in the Software 
+    without restriction, including without limitation the rights to use, copy, modify, merge, 
+    publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons 
+    to whom the Software is furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all copies or 
+    substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+    INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR 
+    PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE 
+    FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, 
+    ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
+     */
+
+・HtmlCleaner
+  HTMLファイル内のリンク解析に使用
+  htmlcleaner-2.2.jar
+
+  HtmlCleaner Project Home Page <http://htmlcleaner.sourceforge.net/>
+    License : BSD License
+
+・HtmlCleanerの依存ライブラリ
+
+  ant-1.7.0.jar
+  ant-launcher-1.7.0.jar
+    Apache Ant - Welcome <http://ant.apache.org/>
+    ライセンス : Apache License, Version 2.0
+
+  jdom-1.1.jar
+    JDOM <http://www.jdom.org/>
+    ライセンス : 
+    JDOM is available under an Apache-style open source license, with the acknowledgment clause removed.
+
+    /*-- 
+    
+     $Id: LICENSE.txt,v 1.11 2004/02/06 09:32:57 jhunter Exp $
+    
+     Copyright (C) 2000-2004 Jason Hunter & Brett McLaughlin.
+     All rights reserved.
+     
+     Redistribution and use in source and binary forms, with or without
+     modification, are permitted provided that the following conditions
+     are met:
+     
+     1. Redistributions of source code must retain the above copyright
+        notice, this list of conditions, and the following disclaimer.
+     
+     2. Redistributions in binary form must reproduce the above copyright
+        notice, this list of conditions, and the disclaimer that follows 
+        these conditions in the documentation and/or other materials 
+        provided with the distribution.
+    
+     3. The name "JDOM" must not be used to endorse or promote products
+        derived from this software without prior written permission.  For
+        written permission, please contact <request_AT_jdom_DOT_org>.
+     
+     4. Products derived from this software may not be called "JDOM", nor
+        may "JDOM" appear in their name, without prior written permission
+        from the JDOM Project Management <request_AT_jdom_DOT_org>.
+     
+     In addition, we request (but do not require) that you include in the 
+     end-user documentation provided with the redistribution and/or in the 
+     software itself an acknowledgement equivalent to the following:
+         "This product includes software developed by the
+          JDOM Project (http://www.jdom.org/)."
+     Alternatively, the acknowledgment may be graphical using the logos 
+     available at http://www.jdom.org/images/logos.
+    
+     THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED
+     WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+     OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+     DISCLAIMED.  IN NO EVENT SHALL THE JDOM AUTHORS OR THE PROJECT
+     CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+     SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF
+     USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+     ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+     OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+     OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+     SUCH DAMAGE.
+    
+     This software consists of voluntary contributions made by many 
+     individuals on behalf of the JDOM Project and was originally 
+     created by Jason Hunter <jhunter_AT_jdom_DOT_org> and
+     Brett McLaughlin <brett_AT_jdom_DOT_org>.  For more information
+     on the JDOM Project, please see <http://www.jdom.org/>. 
+    
+     */
