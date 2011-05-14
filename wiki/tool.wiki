@@ -1,5 +1,5 @@
 #labels tool
-#PDFをテキスト化するツール,サービスの一覧
+#ツール
 
 = はじめに =
  PDFをテキスト化するツールおよびサービスについて、まとめます。
@@ -10,7 +10,7 @@
   * ページの抽出などの操作制限を行う"owner password"
   * ファイルをオープンする制限を行う"user password"
 
- そして、[http://www.mext.go.jp/a_menu/saigaijohou/syousai/1304001.htm 文部省提供の『原発周辺の固定測定点における空間線量率の測定結果』] は、言語道断なことに、"owner password"により抽出が禁止されたPDFなのです。
+ そして、[http://www.mext.go.jp/a_menu/saigaijohou/syousai/1304001.htm 文部省提供の『原発周辺の固定測定点における空間線量率の測定結果』] は、*言語道断*なことに、"owner password"により抽出が禁止されたPDFなのです。
 
  「アクセシビリティのための抽出」は許可されてはいますが、Adobe Acrobatで「テキスト（アクセシブル）」形式で抽出しても、肝心の表データがごっそりと抜け落ちます。
 
