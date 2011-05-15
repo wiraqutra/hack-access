@@ -1,7 +1,7 @@
-#summary PDFの抽出例
+#summary ページ抽出が禁止されたPDFの抽出例
 
 = 概要 =
-PDFの抽出例についてまとめる。
+ページ抽出が禁止されたPDFの抽出例についてまとめる。
 
 ==元となるPDF==
 以下のPDFを元に抽出を行う。
@@ -20,7 +20,8 @@ PDFの抽出例についてまとめる。
 == 抽出結果 ==
 === 1. Adobe Acrobatによる「テキスト（アクセシブル）」形式で抽出===
   ページ抽出が禁止されているため、「テキスト（アクセシブル）」形式以外の抽出はできない。
- * 抽出結果：表など、大半のデータが抽出されない。
+
+  抽出結果：表など、大半のデータが抽出されない。
 {{{
 ［6,900ﾏｲｸﾛｼｰﾍﾞﾙﾄ/回］ 
 
@@ -30,12 +31,16 @@ PDFの抽出例についてまとめる。
 　　(以下、略)
 }}}
 
-=== 2. PDFBoxライブラリを使用したテキスト形式の出力===
+=== 2. PDFBoxライブラリを使用したテキスト形式での抽出===
   Apache PDFBox - Java PDF Library [http://pdfbox.apache.org/] を使用した抽出。PDFBoxは、検索エンジンLucene/Solrでも使用されており、実績がある。コマンドラインからも使用ができる。
 
-  抽出結果としては変わらないが、Javaプログラムから扱った場合のサンプルコードを [http://code.google.com/p/hack-access/source/browse/#svn%2Ftrunk%2Fsample Google Code] に置いておいた。(サンプルコードの方では、HTML出力時に数値文字列参照を文字に変換するようにしている。)
+  抽出結果としては変わらないが、Javaプログラムから扱った場合のサンプルコードを [http://code.google.com/p/hack-access/source/browse/#svn%2Ftrunk%2Fsample Google Code] に置いておいた。(サンプルコードの方では、HTML出力時に数値文字列参照を文字に変換する処理を追加している)
+  また、サンプルコードでは [http://radiation.s3-website-us-east-1.amazonaws.com/ Radiation Data in Japan]を作成された ymdmstk さんから提供されたソースを元にした独自形式でも出力されるようになっている。
 
- * 抽出結果：全ての文字情報が抽出される。
+ 抽出結果：全ての文字情報が抽出される。(4ページ目/5ページ目も含む)
 
-=== 3. 抽出制限を解除して出力===
- * 抽出結果：一部のデータに欠損がある。
+=== 3. 抽出制限を解除した後で抽出===
+  http://www.pdfunlock.com/ を使用して抽出制限を外す。 [http://hack-access.googlecode.com/files/1305872_051019.unlocked.pdf]
+  制限を外されたPDFからは、テキストはもちろん、Adobe AcrobatXML 1.0, HTML 3.2, HTML 4.01, Postscript, WORD などとして抽出できる。
+
+ 抽出結果(テキスト)：図中以外の文字情報が抽出される。
