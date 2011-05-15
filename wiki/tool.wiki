@@ -14,9 +14,7 @@
 
  「アクセシビリティのための抽出」は許可されてはいますが、Adobe Acrobatで「テキスト（アクセシブル）」形式で抽出しても、肝心の表データがごっそりと抜け落ちます。
 
- "owner password"で抽出が禁止されたPDFでも、ツールによっては、表データもテキスト抽出できます。
-
- ただし、ベタなテキストとして抽出できるだけであり、目次や表構造などの構造的な情報について抜き出すツールは、現状のところ見つかっていません。
+ "owner password"で抽出が禁止されたPDFでも、ツールによっては表データもテキスト抽出できます。ただし、ベタなテキストとして抽出できるだけであり、目次や表構造などの構造的な情報について抜き出す方法は、現状のところ見つかっていません。
 
  基本的に、PDFに記録されている構造的な情報を利用するためには、データの提供元にセキュリティを外してもらう必要があります。
 
@@ -41,7 +39,7 @@
   * 概要 : 無料ソフト
   * 環境 : Windows
   * ライセンス : -
-  * テキスト以外の抽出形式 : XML 1.0, HTML 3.2, HTML 4.01, Postscript, WORD など
+  * テキスト以外の抽出形式 : なし
   * 抽出禁止PDFの抽出 : ベタテキストとして抽出可能
 
  * xdoc2txt [http://www31.ocn.ne.jp/~h_ishida/xdoc2txt.html]
@@ -73,7 +71,8 @@
   * テキスト以外の抽出形式 : Excel
   * 抽出禁止PDFの抽出 : 〇
 
- * Poppler [http://poppler.freedesktop.org/]
+ * Poppler [http://poppler.freedesktop.org/] 
+  * すみません。最初の記述者(kamatamadai)自身が確認できていません。
   * 概要 : PDFレンダリングライブラリ
   * 環境 : Linux
   * ライセンス : ?
@@ -98,9 +97,9 @@
  * Ghostscript/GSview [http://auemath.aichi-edu.ac.jp/~khotta/ghost/]
   * 概要 : GSViewでPDFを開き、File→Convertでpdfwriteを選択して出力する
   * 環境 : Windows
-  * 結果 : PDFとしては見掛け上は、ほぼ変わらない。しかし、構造的な情報が抜け落ちてしまう。
+  * 結果 : PDFとして見掛け上は、ほぼ変わらない。しかし、構造的な情報が抜け落ちてしまうため、テキストとして出力したときに表内の順序がバラバラになる。
   * 備考 : プリンタドライバとして登録されるPDF作成ソフトも同様の結果になると思われます。
 
-  ※ 辞書ファイルや総当たりでパスワードを解析するツールである PDFCrack、PDF Password Recovery Tools は試していません。
+  ※ あとは、辞書ファイルや総当たりでパスワードを解析するツールである PDFCrack [http://pdfcrack.sourceforge.net/]、PDF Password Recovery Tools があります。最初の記述者(kamatamadai)の個人責任において、PDFCrackを30分ほど走らせてみましたが、パスワードは破れませんでした。
 
   ※ Freeware PDF Unlocker  [http://wxy117.seesaa.net/article/182841379.html 使用方法の参考] は、64bit版がなくて試せていません。
