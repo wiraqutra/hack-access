@@ -31,16 +31,22 @@
 　　(以下、略)
 }}}
 
-=== 2. PDFBoxライブラリを使用したテキスト形式での抽出===
+=== 2. PDFBoxライブラリを使用した抽出===
   Apache PDFBox - Java PDF Library [http://pdfbox.apache.org/] を使用した抽出。PDFBoxは、検索エンジンLucene/Solrでも使用されており、実績がある。コマンドラインからも使用ができる。
 
   抽出結果としては変わらないが、Javaプログラムから扱った場合のサンプルコードを [http://code.google.com/p/hack-access/source/browse/#svn%2Ftrunk%2Fsample Google Code] に置いておいた。(サンプルコードの方では、HTML出力時に数値文字列参照を文字に変換する処理を追加している)
   また、サンプルコードでは [http://radiation.s3-website-us-east-1.amazonaws.com/ Radiation Data in Japan]を作成された ymdmstk さんから提供されたソースを元にした独自形式でも出力されるようになっている。
 
  抽出結果：全ての文字情報が抽出される。(4ページ目/5ページ目も含む)
+  [http://code.google.com/p/hack-access/downloads/detail?name=1305872_051019_PDFBox.txt テキスト形式]
+  [http://code.google.com/p/hack-access/downloads/detail?name=1305872_051019_PDFBox.html HTML形式]
+  [http://code.google.com/p/hack-access/downloads/detail?name=1305872_051019_PDFBox_json.txt 独自形式]
 
 === 3. 抽出制限を解除した後で抽出===
   http://www.pdfunlock.com/ を使用して抽出制限を外す。 [http://hack-access.googlecode.com/files/1305872_051019.unlocked.pdf]
-  制限を外されたPDFからは、テキストはもちろん、Adobe AcrobatXML 1.0, HTML 3.2, HTML 4.01, Postscript, WORD などとして抽出できる。
+  制限を外されたPDFからは、テキストはもちろん、Adobe Acrobatを使用してXML 1.0, HTML 3.2, HTML 4.01, Postscript, WORD などとして抽出できる。
 
  抽出結果(テキスト)：図中以外の文字情報が抽出される。
+  [http://code.google.com/p/hack-access/downloads/detail?name=1305872_051019.unlocked.txt テキスト形式]
+  [http://code.google.com/p/hack-access/downloads/detail?name=HTML%204.01.ZIP HTML 4.01形式(画像つき)の圧縮ファイル]
+  [http://code.google.com/p/hack-access/downloads/detail?name=XML%201.0.ZIP XML 1.0形式(画像つき)の圧縮ファイル]
