@@ -55,8 +55,9 @@
 =現在 (2011/5/15) の状況=
  * 以前より、少しだけ状況は改善している。
  * しかし、現在でも、放射線データに関してはPDFで提供されている公的機関がある。
- * また、その上、セキュリティがかかっていて、通常の方法ではデータ抽出ができない場合もある。
   * 放射線計測値（METI/経済産業省） [http://www.meti.go.jp/earthquake/nuclear/monitor.html]
+ * また、その上、セキュリティがかかっていて、通常の方法ではデータ抽出ができない場合もある。
+  * [http://code.google.com/p/hack-access/wiki/tool#%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E3%81%AE%E3%81%8B%E3%81%8B%E3%81%A3%E3%81%9FPDF%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6 Wiki別ページ:セキュリティのかかったPDF]
 
  * そのため、放射線計測値のPDFのデータを、有志の方がGoogle Spreadsheets化にまとめ直したり、機械可読データに変換してWebサービスやCSVで提供している状況である。
   * radmonitor311 放射線量モニターデータまとめページ [http://sites.google.com/site/radmonitor311/]
