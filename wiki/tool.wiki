@@ -1,5 +1,6 @@
-#summary PDFをテキスト化するツールおよびサービスの一覧
 #labels tool
+
+#summary PDFをテキスト化するツールおよびサービスの一覧
 
 = はじめに =
  PDFをテキスト化するツールおよびサービスについて、まとめます。
@@ -72,12 +73,19 @@
   * 抽出禁止PDFの抽出 : 〇
 
  * Poppler [http://poppler.freedesktop.org/] 
-  * すみません。最初の記述者(kamatamadai)自身が確認できていません。
   * 概要 : PDFレンダリングライブラリ
-  * 環境 : Linux
-  * ライセンス : ?
-  * テキスト以外の抽出形式 : HTML?
-  * 抽出禁止PDFの抽出 : ?
+  * 環境 : Windows（Popplerの実装である、Sumatra PDF [http://blog.kowalczyk.info/software/sumatrapdf/free-pdf-reader.html] v0.8.1を利用して確認）
+  * ライセンス : GNU General Public License
+  * テキスト以外の抽出形式 : なし
+  * 抽出禁止PDFの抽出 : ベタテキストとして抽出可能
+  * 備考 : 表の順序がおかしくなる
+
+ * MuPDF [http://mupdf.com/] 
+  * 概要 : PDFレンダリングライブラリ
+  * 環境 : Windows（Popplerの実装である、Sumatra PDF [http://blog.kowalczyk.info/software/sumatrapdf/free-pdf-reader.html] v0.8.1を利用して確認）
+  * ライセンス : GNU General Public License
+  * テキスト以外の抽出形式 : 画像をPNG
+  * 抽出禁止PDFの抽出 : ベタテキストとして抽出可能
   * 備考 : 表の順序がおかしくなる
 
  * PDFBox [http://pdfbox.apache.org/]
