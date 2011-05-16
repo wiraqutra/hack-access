@@ -20,9 +20,17 @@
 || 5 || <<日常生活と放射線>> ||
 
 == 抽出結果 ==
-=== 1. Adobe Acrobatによる「テキスト（アクセシブル）」形式で抽出===
-  ページ抽出が禁止されているため、「テキスト（アクセシブル）」形式以外の抽出はできない。
+=== 1. Adobe Acrobatによる抽出===
+==== 1A. Adobe Acrobatによるコピー＆ペースト====
+  文書のすべてを選択してコピーし、クリップボードの内容をファイルに書き出す。
 
+  抽出結果：文字列の順序が正しく抽出できず、読むことができない。
+  # [http://code.google.com/p/hack-access/downloads/detail?name=1305872_051019.clipboard.txt テキスト形式]
+　（ただし、結果図のページの抽出は可能）
+
+==== 1B. Adobe Acrobatによる「テキスト（アクセシブル）」形式で抽出====
+  ページ抽出が禁止されているため、「テキスト（アクセシブル）」形式以外の抽出はできない。
+  （テキスト（プレーン）形式を出力するためにはパスワードが要求される）
   抽出結果：表など、大半のデータが抽出されない。
 {{{
 ［6,900ﾏｲｸﾛｼｰﾍﾞﾙﾄ/回］ 
@@ -43,6 +51,7 @@
   # [http://code.google.com/p/hack-access/downloads/detail?name=1305872_051019_PDFBox.txt テキスト形式]
   # [http://code.google.com/p/hack-access/downloads/detail?name=1305872_051019_PDFBox.html HTML形式]
   # [http://code.google.com/p/hack-access/downloads/detail?name=1305872_051019_PDFBox_json.txt 独自形式 ]
+　（ただし、結果図のページ（4ページ目）は順序が狂っている）
 
 === 3. 抽出制限を解除した後で抽出===
   http://www.pdfunlock.com/ を使用して抽出制限を外す。 [http://hack-access.googlecode.com/files/1305872_051019.unlocked.pdf]
